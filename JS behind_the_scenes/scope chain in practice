@@ -1,0 +1,61 @@
+scoping in practice
+
+function scope : Next, each and every function creates a scope.
+
+And the variables declared inside that function scope
+
+are only accessible inside that function.
+
+
+block scope : this is similar to function scope variables declared inside a block are only accessible inside the block (in strict mode) which we should always be using tho but if you use var it is not blocked scope it will be accessible outside the block scope also 
+
+
+now in es6 function are blocked scope that is function declared inside a block are only accessible inside that block(but this is only true in strict mode) so if you dont use strict mode it wont work
+
+you can have same variables name in your code and they will be completely different variables as far as they are in different scopes 
+
+
+'use strict';
+
+///////////////////////////////////////
+// Scoping in Practice
+
+/*
+function calcAge(birthYear) {
+  const age = 2037 - birthYear;
+
+  function printAge() {
+    let output = `${firstName}, you are ${age}, born in ${birthYear}`;
+    console.log(output);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      var millenial = true;
+      // Creating NEW variable with same name as outer scope's variable
+      const firstName = 'Steven';
+
+      // Reasssigning outer scope's variable
+      output = 'NEW OUTPUT!';
+
+      const str = `Oh, and you're a millenial, ${firstName}`;
+      console.log(str);
+
+      function add(a, b) {
+        return a + b;
+      }
+    }
+    // console.log(str);
+    console.log(millenial);
+    // console.log(add(2, 3));
+    console.log(output);
+  }
+  printAge();
+
+  return age;
+}
+
+const firstName = 'Jonas';
+calcAge(1991);
+// console.log(age);
+// printAge();
+
+*/
