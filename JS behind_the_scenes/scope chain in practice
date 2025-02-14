@@ -1,3 +1,4 @@
+/*
 scoping in practice
 
 function scope : Next, each and every function creates a scope.
@@ -20,7 +21,7 @@ you can have same variables name in your code and they will be completely differ
 ///////////////////////////////////////
 // Scoping in Practice
 
-/*
+
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
 

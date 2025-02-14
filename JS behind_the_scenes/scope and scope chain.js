@@ -255,7 +255,7 @@ scoping asks the question "where do variables live" or "where can we acess a cer
 
 there are 3 types of scope in javascript: the gobal scope, scopes defined by functions, and scopes defined by bocks 
 
-only let and const variables are blocked sciped. variables declared with var end up in the closet function scope
+only let and const variables are blocked scoped. variables declared with var end up in the closet function scope
 in javascript we have lexical scoping so the rules of whr\ere wecan acess variables are based exactly where n the code fiunction and blocks are written 
 
 everyscope always has acess to all the variables from all its outer scopes this is the scope chain!
