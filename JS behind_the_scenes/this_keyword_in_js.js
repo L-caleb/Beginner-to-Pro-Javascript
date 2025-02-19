@@ -1,7 +1,6 @@
-/*
-How the this keyword works
+/*How the this keyword works
 
-this keyword/variable: special variable that is created for ecery execution context (every function).
+this keyword/variable: special variable that is created for every execution context (every function).
 
 this is not static. it depends on how the function is called, and it's value is assigned when the function is actually called
 
@@ -50,5 +49,13 @@ f();
 
 
 in the above code calcAge is a method inside and object called jonas normally jonas.calcAge calls the method but now we put it inside a variable since a function is just a value and so we call the function now like a regular function and so the this keyword which we are to print from the method is now undefined since it is now a regular function 
+
+summary
+
+method this = <object that is calling the method>
+simple function call this = undefined
+arrow function this = <this of surrounding function(lexical this) >
+event listener this = <dom element that handler is attached to>
+
 
 */
