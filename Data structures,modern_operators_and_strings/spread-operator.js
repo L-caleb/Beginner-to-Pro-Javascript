@@ -51,7 +51,7 @@ const restaurant = {
 // spread operator
 
 /*
-so what the spread operator does is that it takes all the value out of the array
+so what the spread operator does is that it takes all the value out of iterables or unpack values from iterables
 */
 
 const arr = [7,8,9];
