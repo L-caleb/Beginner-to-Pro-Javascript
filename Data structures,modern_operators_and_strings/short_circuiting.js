@@ -87,7 +87,7 @@ const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
 // 10 cause it doesnt exist before so it sets guests1 to 10
 
-//using destructuring
+//using Shortcircuiting (OR)
 
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
