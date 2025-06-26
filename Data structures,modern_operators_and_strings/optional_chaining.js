@@ -1,5 +1,34 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+/*
+third enhancement is that we can now compute property names
+
+*/
+
+
+  const openingHours =
+  {
+    [weekdays[3]]:
+    {
+       open: 12,
+       close: 22
+    },
+    // thu
+
+    [weekdays[4]]:
+    { 
+      open: 11,
+      close: 23
+    },
+    // fri
+    [`day-${2 + 4}`]:
+    { 
+      open: 0,
+      close: 24
+    } // dynamic key: 'day-6'
+};
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -8,20 +37,11 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  //before ES6
+  //openinghours = openinghours,
+
+  //ES6 (so it put the object outside called opening hours inside this  restaurant object)
+  openingHours,
 
   rest1: {
     name:'capri',
@@ -34,10 +54,19 @@ const restaurant = {
   },
 
   
+// another enhanced object literals is in the way we write methods
 
-  order(starterIndex, mainIndex) {
+//beofore es6
+  order:function(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+//ES6
+//order(starterIndex,mainIndex){
+//  return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//}
+
+
 
   orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
@@ -55,45 +84,9 @@ const restaurant = {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
+
+  
 };
 
-
-
-
-
-
-for (let i = 0; i < menu.length; i++) {
-  console.log(menu[i]);
-}
-
-// with for of loop
-for (const item of menu) {
-  console.log(item);
-}
-
-//Example looping through a menu array
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-
-for (const item of menu) {
-  console.log(item);
-}
-
-//By default, for-of does NOT give you the index.
-// using entries for both the array and index
-for (const item of menu.entries()) {
-  console.log(item);
-}
-
-// for getting
-for (const [i,en] of menu.entries()) {
-    console.log(`{$i+1}: {&el}`)
-}
-
-//🧠 Behind the Scenes: What is .entries()?
-//.entries() returns an iterator of index-element pairs.
-
-//To inspect it:
-
-console.log([...menu.entries()]);
 
 
